@@ -1,57 +1,22 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './src/pages/Greetings';
+import NewPage from './src/pages/NewPage';
+import Standard from './src/pages/Standard';
 
-const styles = StyleSheet.create({
-  center: {
-    alignItems: 'center',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+const Stack = createStackNavigator();
 
-type GreetingProps = {
-  name: string;
-};
-
-const Greeting = (props: GreetingProps) => {
+const App = () => {
   return (
-    <View style={styles.center}>
-      <Text>Hello {props.name}!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="NewPage" component={NewPage} />
+        <Stack.Screen name="Standard" component={Standard} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-// React Native Counter Example using Hooks!
-
-const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  return (
-    <View>
-      <Text>You clicked {count} times</Text>
-      <Button
-        onPress={() => setCount(count + 1)}
-        title="Click me!"
-      />
-    </View>
-  );
-};
-
-
-const LotsOfGreetings = () => {
-  return (
-    <View style={[styles.center, { top: 50 }]}>
-      <Greeting name="Rexxar" />
-      <Greeting name="Jaina" />
-      <Greeting name="Valeera" />
-      <Text>You Test</Text>
-      <Counter />
-    </View>
-  );
-};
-
-
-export default LotsOfGreetings;
+export default App;

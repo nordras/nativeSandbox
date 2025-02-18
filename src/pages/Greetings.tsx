@@ -1,8 +1,13 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
 const styles = StyleSheet.create({
   center: {
+    alignItems: 'center',
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });
@@ -19,14 +24,32 @@ const Greeting = (props: GreetingProps) => {
   );
 };
 
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <View>
+      <Text>You clicked {count} times</Text>
+      <Button
+        onPress={() => setCount(count + 1)}
+        title="Click me!"
+      />
+    </View>
+  );
+};
+
+
 const LotsOfGreetings = () => {
   return (
     <View style={[styles.center, { top: 50 }]}>
       <Greeting name="Rexxar" />
       <Greeting name="Jaina" />
       <Greeting name="Valeera" />
+      <Text>You Test</Text>
+      <Counter />
     </View>
   );
 };
+
 
 export default LotsOfGreetings;
