@@ -1,22 +1,76 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 type RootStackParamList = {
-  Home: undefined;
-  NewPage: undefined;
+  Counter: undefined;
+  FlatList: undefined;
   Greetings: undefined;
+  NewPage: undefined;
+  Standard: undefined;
 };
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+const Home = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
-const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
-    <View>
-      <Text>Página Inicial</Text>
-      <Button title="Ir para Nova Página" onPress={() => navigation.navigate('Greetings')} />
+    <View style={styles.container}>
+      <Text style={styles.title}>🏠 Home</Text>
+      <Text style={styles.subtitle}>Escolha uma página:</Text>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Counter")}>
+        <Text style={styles.buttonText}>📊 Counter</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FlatList")}>
+        <Text style={styles.buttonText}>📋 FlatList</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Greetings")}>
+        <Text style={styles.buttonText}>👋 Greetings</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NewPage")}>
+        <Text style={styles.buttonText}>📄 NewPage</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Standard")}>
+        <Text style={styles.buttonText}>⚙ Standard</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
-export default HomeScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f5f5f5",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    marginBottom: 20,
+    color: "#555",
+  },
+  button: {
+    backgroundColor: "#007AFF",
+    padding: 15,
+    borderRadius: 10,
+    marginVertical: 5,
+    width: "80%",
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 18,
+  },
+});
+
+export default Home;
