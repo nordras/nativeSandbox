@@ -1,9 +1,7 @@
-// React Native Counter Example using Hooks!
-
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const App = () => {
+const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -25,3 +23,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default Counter

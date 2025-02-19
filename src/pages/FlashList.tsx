@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { FlashList } from "@shopify/flash-list";
-import { FlatList } from "react-native";
 
 
 const renderItem = ({ item }: { item: { id: string; title: string } }) => (
@@ -14,8 +13,8 @@ const ListComparisonScreen = () => {
   const DATA = useMemo(() => Array.from({ length: 1000 }, (_, i) => ({ id: i.toString(), title: `Item ${i + 1}` })), []);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>📌 FlatList (Nativo)</Text>
-      <FlatList data={DATA} keyExtractor={(item) => item.id} renderItem={renderItem} />
+      <Text style={styles.title}>🚀 FlashList (Shopify)</Text>
+      <FlashList data={DATA} keyExtractor={(item) => item.id} renderItem={renderItem} estimatedItemSize={50} />
     </View>
   );
 };

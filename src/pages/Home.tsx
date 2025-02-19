@@ -6,6 +6,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 type RootStackParamList = {
   Counter: undefined;
   FlatList: undefined;
+  FlashList: undefined;
   Greetings: undefined;
   NewPage: undefined;
   Standard: undefined;
@@ -25,6 +26,10 @@ const Home = () => {
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FlatList")}>
         <Text style={styles.buttonText}>📋 FlatList</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FlashList")}>
+        <Text style={styles.buttonText}>📋 FlashList</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Greetings")}>

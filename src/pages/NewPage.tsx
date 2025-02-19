@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from '@react-navigation/native';
 
 type RootStackParamList = {
@@ -13,7 +15,8 @@ type Props = {
   route: RouteProp<RootStackParamList, 'NewPage'>;
 };
 
-const NewPage: React.FC<Props> = ({ navigation }) => {
+const NewPage = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Esta é a nova página!</Text>
