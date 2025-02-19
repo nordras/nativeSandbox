@@ -17,7 +17,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Counter" component={Counter} />
         <Stack.Screen name="FlatList" component={FlatList} />
-        <Stack.Screen name="FlatList" component={FlashList} />
+        <Stack.Screen name="FlashList" component={FlashList} />
         <Stack.Screen name="Greetings" component={Greetings} />
         <Stack.Screen name="NewPage" component={NewPage} />
         <Stack.Screen name="Standard" component={Standard} />
