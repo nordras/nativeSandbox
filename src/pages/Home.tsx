@@ -1,16 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { NativeModules, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../../App";
 
-type RootStackParamList = {
-  Counter: undefined;
-  FlatList: undefined;
-  FlashList: undefined;
-  Greetings: undefined;
-  NewPage: undefined;
-  Standard: undefined;
-};
+const { MyNativeModule } = NativeModules;
+
+MyNativeModule.showToast('Olá do módulo nativo em Kotlin!');
+
 
 const Home = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();

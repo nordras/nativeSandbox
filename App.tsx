@@ -10,6 +10,15 @@ import FlashList from "./src/pages/FlashList";
 
 const Stack = createNativeStackNavigator();
 
+export type RootStackParamList = {
+  Counter: undefined;
+  FlatList: undefined;
+  FlashList: undefined;
+  Greetings: undefined;
+  NewPage: undefined;
+  Standard: undefined;
+};
+
 export default function App() {
   return (
     <NavigationContainer>
