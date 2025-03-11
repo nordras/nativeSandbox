@@ -40,6 +40,10 @@ const Home = () => {
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Standard")}>
         <Text style={styles.buttonText}>⚙ Standard</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("ImageCache")}>
+        <Text style={styles.buttonText}>⚙ Image Caching</Text>
+      </TouchableOpacity>
     </View>
   );
 };
