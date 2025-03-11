@@ -6,9 +6,9 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ## First objectives
 
-Compare FlashList (by shopify) vs FlatList
-RN Native Modules
-Use Flipper debugger tool
+Checked Compare FlashList (by shopify) vs FlatList
+Checked RN Native Modules
+Checked Use Flipper debugger tool
 Create RN chat platform, integrating with Firebase
 RN with Firebase push notification
 RN image + caching
