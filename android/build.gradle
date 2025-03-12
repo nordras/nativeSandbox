@@ -14,9 +14,6 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:8.2.0")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
-        debugImplementation("com.facebook.soloader:soloader:0.10.5")
     }
 }
 

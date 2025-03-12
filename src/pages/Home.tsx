@@ -1,12 +1,12 @@
 import React from "react";
-import { NativeModules, View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../App";
 
-const { MyNativeModule } = NativeModules;
+// const { MyNativeModule } = NativeModules; NativeModules,
 
-MyNativeModule.showToast('Olá do módulo nativo em Kotlin!');
+// MyNativeModule.showToast('Olá do módulo nativo em Kotlin!');
 
 
 const Home = () => {
@@ -16,6 +16,10 @@ const Home = () => {
     <View style={styles.container}>
       <Text style={styles.title}>🏠 Home</Text>
       <Text style={styles.subtitle}>Escolha uma página:</Text>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Sandbox")}>
+        <Text style={styles.buttonText}>📊 Sandbox</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Counter")}>
         <Text style={styles.buttonText}>📊 Counter</Text>
