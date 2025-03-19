@@ -6,13 +6,13 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ## First objectives
 
-Checked Compare FlashList (by shopify) vs FlatList
-Checked RN Native Modules
+Checked Compare FlashList (by shopify) vs FlatList - done
+Checked RN Native Modules - done
 Checked Use Flipper debugger tool
 Create RN chat platform, integrating with Firebase
 RN with Firebase push notification
-RN image + caching
-RN Animations
+RN image + caching - done
+RN Animations - done
 
 ## Step 1: Start Metro
 
