@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "11397115365",
+    "project_id": "nativesandbox",
+    "storage_bucket": "nativesandbox.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11397115365:android:150a52ea7550d5a68a930c",
+        "android_client_info": {
+          "package_name": "com.nativesandbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11397115365-mtkdosrvrm2gjtqjr67j237a2kpqrrlk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nativesandbox",
+            "certificate_hash": "f2e213db9c8ce713aeec67fd601eb5cbdc2e5094"
+          }
+        },
+        {
+          "client_id": "11397115365-cchna00a13oan4i36n0l77g973j1hi9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkZBQf3PyM-8lCFWlg79GtCCrfXiz3cwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11397115365-cchna00a13oan4i36n0l77g973j1hi9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

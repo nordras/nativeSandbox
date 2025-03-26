@@ -8,6 +8,7 @@ import Greetings from "./src/pages/Greetings";
 import NewPage from "./src/pages/NewPage";
 import Standard from "./src/pages/Standard";
 import FlashList from "./src/pages/FlashList";
+import Login from "./src/pages/Login";
 import ImageCache from "./src/pages/ImageCache";
 
 const Stack = createNativeStackNavigator();
@@ -21,6 +22,7 @@ export type RootStackParamList = {
   NewPage: undefined;
   Standard: undefined;
   ImageCache: undefined;
+  Login: undefined;
 };
 
 export default function App() {
@@ -29,6 +31,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Sandbox" component={Sandbox} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Counter" component={Counter} />
         <Stack.Screen name="FlatList" component={FlatList} />
         <Stack.Screen name="FlashList" component={FlashList} />

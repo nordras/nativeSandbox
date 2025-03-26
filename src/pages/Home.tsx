@@ -10,13 +10,13 @@ import firebase from '@react-native-firebase/app';
 // MyNativeModule.showToast('Olá do módulo nativo em Kotlin!');
 
 const FadeInView = ({ children }) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current; // Valor inicial da opacidade
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(fadeAnim, {
-      toValue: 1, // Opacidade final
-      duration: 1000, // Tempo da animação em ms
-      useNativeDriver: true, // Usa o driver nativo para melhor desempenho
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true,
     }).start();
   }, [fadeAnim]);
 
@@ -47,6 +47,10 @@ const Home = () => {
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Sandbox")}>
           <Text style={styles.buttonText}>📊 Sandbox</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
+          <Text style={styles.buttonText}>📊 Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Counter")}>
