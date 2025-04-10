@@ -9,7 +9,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 Checked Compare FlashList (by shopify) vs FlatList - done
 Checked RN Native Modules - done
 Checked Use Flipper debugger tool
-Create RN chat platform, integrating with Firebase
+Create RN chat platform, integrating with Firebase done
 RN with Firebase push notification
 RN image + caching - done
 RN Animations - done
