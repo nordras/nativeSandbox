@@ -1,45 +1,65 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import Home from "./src/pages/Home";
-import Sandbox from "./src/pages/Sandbox";
-import Counter from "./src/pages/Counter";
-import FlatList from "./src/pages/FlatList";
-import Greetings from "./src/pages/Greetings";
-import NewPage from "./src/pages/NewPage";
-import Standard from "./src/pages/Standard";
-import FlashList from "./src/pages/FlashList";
-import Login from "./src/pages/Login";
-import ImageCache from "./src/pages/ImageCache";
+apply plugin: "com.android.application"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "com.facebook.react"
+apply plugin: "com.google.gms.google-services" // Firebase Plugin
 
-const Stack = createNativeStackNavigator();
+react {
+  autolinkLibrariesWithApp()
+}
 
-export type RootStackParamList = {
-  Sandbox: undefined;
-  Counter: undefined;
-  FlatList: undefined;
-  FlashList: undefined;
-  Greetings: undefined;
-  NewPage: undefined;
-  Standard: undefined;
-  ImageCache: undefined;
-  Login: undefined;
-};
+def enableProguardInReleaseBuilds = false
+def jscFlavor = 'org.webkit:android-jsc:+'
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Sandbox" component={Sandbox} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Counter" component={Counter} />
-        <Stack.Screen name="FlatList" component={FlatList} />
-        <Stack.Screen name="FlashList" component={FlashList} />
-        <Stack.Screen name="Greetings" component={Greetings} />
-        <Stack.Screen name="NewPage" component={NewPage} />
-        <Stack.Screen name="Standard" component={Standard} />
-        <Stack.Screen name="ImageCache" component={ImageCache} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+
+  namespace "com.nativesandbox"
+    defaultConfig {
+        applicationId "com.nativesandbox"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+  }
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+    }
+  }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+    }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+    }
+  }
+}
+
+dependencies {
+  implementation("com.facebook.react:react-android")
+
+  if (hermesEnabled.toBoolean()) {
+    implementation("com.facebook.react:hermes-android")
+  } else {
+        implementation jscFlavor
+  }
+
+  // Firebase Core SDK
+  implementation("com.google.firebase:firebase-bom:32.7.2")
+  implementation("com.google.firebase:firebase-analytics")
+
+  // Flipper - Apenas no debug
+  debugImplementation("com.facebook.flipper:flipper:0.231.0")
+  debugImplementation("com.facebook.flipper:flipper-network-plugin:0.231.0") {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+  }
+  debugImplementation("com.facebook.flipper:flipper-fresco-plugin:0.231.0")
 }

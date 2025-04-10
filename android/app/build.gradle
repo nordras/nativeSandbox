@@ -55,4 +55,11 @@ dependencies {
     // Firebase Core SDK
     implementation("com.google.firebase:firebase-bom:32.7.2")
     implementation("com.google.firebase:firebase-analytics")
+
+    // Flipper
+    debugImplementation("com.facebook.flipper:flipper:0.231.0")
+    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.231.0") {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:0.231.0")
 }
