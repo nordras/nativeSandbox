@@ -36,6 +36,9 @@ class MainApplication : Application(), ReactApplication {
     super.onCreate()
     SoLoader.init(this, OpenSourceMergedSoMapping)
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    if (BuildConfig.DEBUG) {
+      ReactNativeFlipper.initializeFlipper(this, reactNativeHost.reactInstanceManager)
+    }
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // Se a nova arquitetura estiver ativada, carregamos a entrada nativa
       load()
